@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GanaderíaApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="app-header">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo GanaderíaApp">
+      <h1>GanaderíaApp</h1>
+    </div>
+    <div class="user-info">
+      <span>Hola, Manuel</span>
+      <img src="img/profile.jpg" alt="Perfil" class="profile-pic">
+    </div>
+  </header>
+
+  <!-- Inicio -->
+  <main id="inicio" class="active">
+    <section class="banner">
+      <img src="img/banner-ganado.jpg" alt="Ganado en campo">
+    </section>
+
+    <section class="summary">
+      <div class="card"><h3>Total de Ganado</h3><p><strong id="totalGanado">0</strong> Cabezas</p></div>
+      <div class="card"><h3>Vacas en Producción</h3><p><strong id="vacasProduccion">0</strong></p></div>
+      <div class="card"><h3>Animales Enfermos</h3><p><strong id="animalesEnfermos">0</strong></p></div>
+      <div class="card"><h3>Próximos Partos</h3><p><strong id="proximosPartos">0</strong></p></div>
+    </section>
+
+    <section class="activities">
+      <h2>Actividades Recientes</h2>
+      <ul id="listaActividades">
+        <!-- Se llenará dinámicamente -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Inventario -->
+  <section id="inventario" class="hidden">
+    <h2>Inventario de Ganado</h2>
+    <div class="search-bar">
+      <input type="text" id="buscarArete" placeholder="Buscar por número de arete...">
+      <button onclick="buscarAnimal()">🔍 Buscar</button>
+    </div>
+    <div id="resultado"></div>
+    <table class="inventory-table">
+      <thead>
+        <tr><th>ID</th><th>Nombre</th><th>Edad</th><th>Estado</th><th>Peso</th><th>Foto</th></tr>
+      </thead>
+      <tbody id="tablaInventario">
+        <!-- Animales cargados dinámicamente -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Reportes -->
+  <section id="reportes" class="hidden">
+    <h2>Reportes y Estadísticas</h2>
+    <div class="charts">
+      <canvas id="graficaLeche"></canvas>
+      <canvas id="graficaCrecimiento"></canvas>
+      <canvas id="graficaSanitario"></canvas>
+    </div>
+  </section>
+
+  <!-- Lotes -->
+  <section id="lotes" class="hidden">
+    <h2>Gestión de Lotes</h2>
+    <form id="lotes-form">
+      <label for="area">Área:</label>
+      <select id="area">
+        <option value="A">Área A</option>
+        <option value="B">Área B</option>
+        <option value="C">Área C</option>
+      </select>
+
+      <label for="cantidad">Cantidad de animales:</label>
+      <input type="number" id="cantidad" min="0" required>
+
+      <label for="estadoGrupo">Estado del grupo:</label>
+      <select id="estadoGrupo">
+        <option value="normal">Normal</option>
+        <option value="bañado">Bañado</option>
+        <option value="nuevo">Grupo nuevo</option>
+        <option value="cambio">Con cambios</option>
+      </select>
+
+      <button type="submit">Registrar Lote</button>
+    </form>
+
+    <h3>Resumen de Lotes</h3>
+    <table class="inventory-table">
+      <thead>
+        <tr><th>Área</th><th>Cantidad</th><th>Estado</th></tr>
+      </thead>
+      <tbody id="tablaLotes">
+        <!-- Lotes cargados dinámicamente -->
+      </tbody>
+    </table>
+    <p><strong>Total General:</strong> <span id="totalLotes">0</span> animales</p>
+  </section>
+
+  <!-- Más -->
+  <section id="mas" class="hidden">
+    <h2>Configuraciones y Herramientas</h2>
+    <ul class="settings-list">
+      <li>⚙️ Ajustes de la aplicación</li>
+      <li>📅 Calendario de actividades</li>
+      <li>📤 Exportar datos</li>
+      <li>📞 Contactar soporte</li>
+    </ul>
+  </section>
+
+  <!-- Registro -->
+  <section id="registro" class="hidden">
+    <h2>Registrar Nuevo Animal</h2>
+    <form id="registro-form">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="arete">Número de arete:</label>
+      <input type="text" id="arete" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" min="0" required>
+
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" min="0" required>
+
+      <label for="foto">Foto del animal:</label>
+      <input type="file" id="foto" accept="image/*">
+
+      <label for="estado">Estado:</label>
+      <select id="estado">
+        <option value="produccion">Producción</option>
+        <option value="gestacion">Gestación</option>
+        <option value="enfermo">Enfermo</option>
+      </select>
+
+      <button type="submit">Registrar</button>
+    </form>
+  </section>
+
+  <!-- Navegación -->
+  <nav class="bottom-nav">
+    <button onclick="mostrarSeccion('inicio')">Inicio</button>
+    <button onclick="mostrarSeccion('inventario')">Inventario</button>
+    <button onclick="mostrarSeccion('reportes')">Reportes</button>
+    <button onclick="mostrarSeccion('lotes')">Lotes</button>
+    <button onclick="mostrarSeccion('mas')">Más</button>
+    <button onclick="mostrarSeccion('registro')">Registro</button>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

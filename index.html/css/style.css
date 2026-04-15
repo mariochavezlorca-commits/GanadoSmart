@@ -1,0 +1,238 @@
+/* ===== Estilos generales ===== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* ===== Encabezado ===== */
+.app-header {
+  background-color: #2e7d32;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-header .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.app-header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.app-header .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* ===== Banner ===== */
+.banner img {
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #2e7d32;
+}
+
+/* ===== Tarjetas resumen ===== */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #2e7d32;
+}
+
+.card p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* ===== Actividades recientes ===== */
+.activities {
+  padding: 15px;
+}
+
+.activities h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.activities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.activities li {
+  background: white;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* ===== Inventario y Lotes ===== */
+.search-bar {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-bar button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px;
+}
+
+.inventory-table th, .inventory-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.inventory-table th {
+  background-color: #2e7d32;
+  color: white;
+}
+
+/* ===== Reportes ===== */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 15px;
+}
+
+.chart {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Más ===== */
+.settings-list {
+  list-style: none;
+  padding: 15px;
+}
+
+.settings-list li {
+  background: white;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* ===== Formularios (Registro y Lotes) ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  margin: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input, form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+form button {
+  margin-top: 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1b5e20;
+}
+
+/* ===== Navegación inferior ===== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #2e7d32;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===== Secciones ocultas ===== */
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
